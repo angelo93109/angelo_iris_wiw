@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>尤彥捷 &amp; 廖涓佑 · 2027.03.06 婚禮邀請</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'ChenYuluoyan';
+    src: url('https://cdn.jsdelivr.net/gh/Chenyu-otf/chenyuluoyan_thin@main/ChenYuluoyan-2.0-Thin.ttf') format('truetype'),
+         url('https://raw.githubusercontent.com/Chenyu-otf/chenyuluoyan_thin/main/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
+    font-weight: 100 400;
+    font-display: swap;
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EDEAE4; font-family: 'ChenYuluoyan', 'Noto Serif TC', serif; }
+  a { color: #91816F; text-decoration: none; }
+  a:hover { color: #2B2724; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155,120,102,0.35); } 50% { transform: scale(1.06); box-shadow: 0 0 0 10px rgba(155,120,102,0); } }
+</style>
+  <script src="./image-slot.js"></script>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 260" preserveAspectRatio="xMidYMid meet"><rect width="240" height="260" fill="#F5F1EA"></rect><text x="120" y="108" font-family="Georgia, 'Noto Serif TC', serif" font-size="9" letter-spacing="3.5" fill="#A79C8E" text-anchor="middle">WEDDING INVITATION</text><text x="120" y="136" font-family="Georgia, 'Noto Serif TC', serif" font-size="20" fill="#2B2724" text-anchor="middle">Angelo <tspan fill="#9B7866">&amp;</tspan> Iris</text><text x="120" y="154" font-family="'Noto Serif TC', serif" font-size="9.5" letter-spacing="2" fill="#6B5F52" text-anchor="middle">2027 . 03 . 06</text><rect x="70" y="182" width="100" height="3" rx="1.5" fill="#E6E0D6"></rect><rect x="70" y="182" width="0" height="3" rx="1.5" fill="#9B7866"><animate attributeName="width" values="0;100;100" keyTimes="0;0.8;1" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1"></animate><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.85;1" dur="2.6s" repeatCount="indefinite"></animate></rect><circle cx="70" cy="183.5" r="3.2" fill="#9B7866"><animate attributeName="cx" values="70;170;170" keyTimes="0;0.8;1" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1"></animate><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.85;1" dur="2.6s" repeatCount="indefinite"></animate></circle><text x="120" y="204" font-family="Georgia, 'Noto Serif TC', serif" font-size="8" letter-spacing="2.5" fill="#A79C8E" text-anchor="middle">LOADING</text></svg></template>
+
+<sc-if value="{{ splashVisible }}" hint-placeholder-val="{{ true }}">
+  <div style="position: fixed; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 100; margin: 0; background: #F5F1EA; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; opacity: {{ splashOpacity }}; transition: opacity 1.1s ease; pointer-events: {{ splashPointer }}; cursor: pointer; font-family: Georgia, 'Noto Serif TC', serif;" onClick="{{ openInvite }}">
+    <img src="assets/splash/bouquet.png" alt="" style="width: min(52vw, 260px); height: auto; display: block; margin-bottom: 14px;">
+    <div style="font-size: clamp(11px, 3vw, 15px); letter-spacing: 0.4em; color: #A79C8E; text-align: center;">WEDDING INVITATION</div>
+    <div style="margin-top: 10px; font-size: clamp(30px, 8vw, 46px); color: #2B2724; text-align: center; line-height: 1.1;">Angelo <span style="color: #9B7866;">&amp;</span> Iris</div>
+    <div style="margin-top: 12px; font-size: clamp(12px, 3.2vw, 17px); letter-spacing: 0.25em; color: #6B5F52; text-align: center;">2027 . 03 . 06</div>
+    <div style="position: relative; width: min(46vw, 220px); height: 3px; border-radius: 2px; background: #E6E0D6; margin-top: 40px; opacity: {{ barOpacity }}; transition: opacity 0.7s ease;">
+      <div style="position: absolute; left: 0; top: 0; height: 100%; border-radius: 2px; background: #9B7866; width: {{ barPct }};"></div>
+      <div style="position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: #9B7866; transform: translate(-50%, -50%); left: {{ barPct }};"></div>
+    </div>
+    <div style="margin-top: 16px; min-height: 64px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+      <sc-if value="{{ notReady }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size: clamp(10px, 2.6vw, 13px); letter-spacing: 0.3em; color: #A79C8E; text-align: center; opacity: {{ barOpacity }}; transition: opacity 0.7s ease;">{{ loadingLabel }}</div>
+      </sc-if>
+      <sc-if value="{{ isReady }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; animation: rise 1s ease both;">
+          <div style="width: 54px; height: 54px; border-radius: 50%; border: 1px solid #9B7866; display: flex; align-items: center; justify-content: center; animation: pulse 1.8s ease-in-out infinite;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#9B7866" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 L12 13.5 L21 7.5"></path><rect x="3" y="5" width="18" height="14" rx="1.5"></rect></svg>
+          </div>
+          <div style="font-family: 'ChenYuluoyan', 'Noto Serif TC', serif; font-weight: 800; font-size: clamp(15px, 4vw, 19px); letter-spacing: 0.3em; color: #6B5F52;">輕觸開啟喜帖</div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<div style="min-height: 100vh; width: 100%; background: #EDEAE4; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; font-family: 'ChenYuluoyan', 'Noto Serif TC', serif; font-weight: 800; opacity: {{ mainOpacity }}; transition: opacity 1.4s ease; position: absolute; left: 5px; top: -3px">
+  <div style="width: 100%; max-width: 520px; margin: 0 auto; background: #FBF9F5; box-shadow: 0 0 90px -30px rgba(43,39,36,0.35); position: relative;">
+
+    <div style="position: relative; min-height: 100svh; background: #26231F; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 clamp(56px, 12vh, 110px);">
+      <image-slot id="cover" shape="rect" placeholder="＋ 婚紗照" style="position: absolute; left: 0; right: 0; top: 0; height: 62%; width: 100%; z-index: 0;" src="photos/dsc_6936-82-msopx23v-30y4.jpg"></image-slot>
+      <div style="position: absolute; left: 0; right: 0; top: 0; height: 62%; pointer-events: none; background: linear-gradient(180deg, rgba(38,35,31,0) 46%, rgba(38,35,31,0.55) 78%, #26231F 100%);"></div>
+      <div style="position: relative; flex: 1; min-height: 120px; pointer-events: none;"></div>
+      <div style="position: relative; z-index: 2; text-align: center; padding: 0 32px; animation: rise 1.1s ease both;">
+        <div style="font-size: 18px; font-weight: 800; letter-spacing: 0.42em; color: #FBF9F5; text-transform: uppercase; margin-bottom: 20px;">We are getting married</div>
+        <div style="font-size: clamp(44px, 12vw, 56px); font-weight: 800; color: #FBF9F5; letter-spacing: 0.16em; line-height: 1.25;">尤彥捷</div>
+        <div style="font-size: 24px; color: rgba(251,249,245,0.75); margin: 6px 0;">&amp;</div>
+        <div style="font-size: clamp(44px, 12vw, 56px); font-weight: 800; color: #FBF9F5; letter-spacing: 0.16em; line-height: 1.25;">廖涓佑</div>
+        <div style="width: 28px; height: 1px; background: rgba(251,249,245,0.5); margin: 26px auto;"></div>
+        <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.24em; color: #FBF9F5;">2027 . 03 . 06　SAT　10:00</div>
+      </div>
+      <div style="position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; font-size: 14px; letter-spacing: 0.3em; color: rgba(251,249,245,0.65); text-transform: uppercase;">scroll</div>
+    </div>
+
+    <div data-reveal="1" style="position: relative; padding: clamp(64px, 12vw, 88px) 40px; text-align: center; overflow: hidden;">
+      <img src="assets/floral/fern.png" alt="" style="position: absolute; left: -4px; top: 78px; width: 96px; opacity: 0.85; transform: rotate(8deg); pointer-events: none;">
+      <img src="assets/floral/lavender-stems.png" alt="" style="position: absolute; right: 4px; top: 168px; width: 70px; opacity: 0.9; transform: rotate(-10deg) scaleX(-1); pointer-events: none;">
+      <div style="position: relative; font-size: 20px; font-weight: 800; letter-spacing: 0.36em; color: #A79C8E; text-transform: uppercase;">Invitation</div>
+      <div style="position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 12px 0 26px;">
+        <img src="assets/floral/heart-divider.png" alt="" style="width: 168px; opacity: 0.75;">
+      </div>
+      <div style="font-size: 20px; font-weight: 800; line-height: 2.1; color: #6E6154; letter-spacing: 0.06em; margin: 0; text-wrap: pretty; border-radius: 21px">我們的故事，從一段管弦樂社的合奏開始。<br><br>那時彼此的人生，都走在截然不同的道路上。<br>直到出社會後，正在經歷低潮時，<br><br>一句真誠的關心「妳還好嗎？」<br><br>讓兩個疲憊的人，有了往前走的力氣，<br>人生也從此有了交集。<br><br>一路上，我們也吵過、鬧過，<br>為了誰對誰錯爭執到深夜，<br>卻從來沒有鬆開過對方的手。<br><br>我們學會聽懂彼此的停頓，<br>學會在不同的聲部裡，奏出自然的合聲；<br>在一次次的溝通與包容裡，<br>把稜角磨成默契，把陪伴練成一生。<br><br>原來最好的緣分，不是從此沒有爭執，<br>而是在每一次爭執之後，<br>依然願意選擇你，<br>也把自己變成更好的人。<br><br>如今，這首合奏終於要走進最溫柔且甜蜜的樂章——<br><br><div style="color: #9B7866; font-size: 21px">謹訂於 二〇二七年 三 月 六 日（星期六）10:○○ AM</div><div style="color: #9B7866; font-size: 21px">於大直 CHALET V 舉行婚宴</div><br>誠摯邀請您蒞臨，<br>與我們一同見證這段練習了很久、<br>也會演奏一輩子的美妙旋律～</div>
+      <div style="margin-top: 42px; font-size: 17px; font-weight: 800; color: #6B5F52; line-height: 2; letter-spacing: 0.08em;">&nbsp; 尤國賢 · 陳衍鈺 之子　彥捷&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>廖文邦 · 賴寬燕　之女　涓佑&nbsp; &nbsp; 敬邀</div>
+    </div>
+
+    <div style="height: 1px; background: #E6E0D6; margin: 0 40px;"></div>
+
+    <div id="date" data-reveal="1" style="padding: clamp(56px, 10vw, 76px) 32px;">
+      <div style="text-align: center; font-size: 20px; font-weight: 800; letter-spacing: 0.36em; color: #A79C8E; text-transform: uppercase; margin-bottom: 30px;">Save the date</div>
+      <div style="background: #F5F1EA; border-radius: 4px; padding: 28px 22px;">
+        <div style="text-align: center; font-size: 19px; font-weight: 800; color: #2B2724; letter-spacing: 0.14em; margin-bottom: 20px;">2027 年 3 月</div>
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px 0;">
+          <sc-for list="{{ weekLabels }}" as="w" hint-placeholder-count="7">
+            <div style="text-align: center; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; color: #69553C; padding-bottom: 10px;">{{ w }}</div>
+          </sc-for>
+          <sc-for list="{{ calDays }}" as="d" hint-placeholder-count="32">
+            <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 800;">
+              <span style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: {{ d.bg }}; color: {{ d.fg }};">{{ d.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #E6E0D6;">
+          <div style="text-align: center; font-size: 18px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; color: #A79C8E;">Counting down</div>
+          <div style="display: flex; justify-content: center; gap: 26px; margin-top: 14px;">
+            <sc-for list="{{ countdown }}" as="c" hint-placeholder-count="3">
+              <div style="text-align: center;">
+                <div style="font-size: 34px; font-weight: 800; color: #9B7866; line-height: 1;">{{ c.v }}</div>
+                <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: #504A42; margin-top: 8px;">{{ c.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <a href="https://calendar.app.google/vKE3dzUEp2vhJnX9A" target="_blank" rel="noopener" style="display: block; margin-top: 12px; text-align: center; padding: 15px 0; border: 1px solid #CFC6B8; border-radius: 2px; font-size: 18px; font-weight: 800; letter-spacing: 0.12em; color: #91816F;" style-hover="background: #EDE7DD">加入行事曆</a>
+    </div>
+
+    <div style="position: relative; padding: 0 0 clamp(56px, 10vw, 76px); overflow: hidden;">
+      
+      <img src="assets/floral/peach-sprig.png" alt="" style="position: absolute; width: 82px; opacity: 0.85; transform: rotate(6deg) scaleX(-1); pointer-events: none; left: 425px; top: 1756px; height: 118px">
+
+      <div data-reveal="1" style="position: relative; text-align: center; margin-bottom: 24px;">
+        <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.36em; color: #A79C8E; text-transform: uppercase;">Gallery</div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 12px; position: relative">
+          <img src="assets/floral/heart-divider.png" alt="" style="width: 168px; opacity: 0.75;">
+        <img src="assets/floral/babysbreath-tape.png" alt="" style="position: absolute; left: 66px; top: -28px; width: 49px; opacity: 0.85; transform: rotate(-6deg); pointer-events: none; height: 70px"></div>
+      </div>
+
+      <div style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 40px;">
+        <div data-reveal="left" style="grid-column: span 2; aspect-ratio: 3/2; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g01" shape="rect" placeholder="照片 01" src="photos/dsc00192-msoqgbcm-04v1.jpg"></image-slot></div>
+        <div data-reveal="right" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g02" shape="rect" placeholder="照片 02" src="photos/dsc_7371-174-msoqmngv-332r.jpg"></image-slot></div>
+        <div data-reveal="left" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g03" shape="rect" placeholder="照片 03" src="photos/dsc_7343-169-msoqhfxt-jfkt.jpg"></image-slot></div>
+        <div data-reveal="right" style="grid-column: span 2; aspect-ratio: 3/2; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g04" shape="rect" placeholder="照片 04" src="photos/dsc_7112-123-msoqij61-m7de.jpg"></image-slot></div>
+        <div data-reveal="left" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g05" shape="rect" placeholder="照片 05" src="photos/art_0168-msoqua48-mzic.jpg"></image-slot></div>
+        <div data-reveal="right" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g06" shape="rect" placeholder="照片 06" src="photos/art_1029-msoqie8y-gpk0.jpg"></image-slot></div>
+        <div data-reveal="left" style="grid-column: span 2; aspect-ratio: 16/9; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g07" shape="rect" placeholder="照片 07" src="photos/dsc06934-msoqpaag-41yd.jpg"></image-slot></div>
+        <div data-reveal="left" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g08" shape="rect" placeholder="照片 08"></image-slot></div>
+        <div data-reveal="right" style="aspect-ratio: 3/4; position: relative; min-width: 0; overflow: hidden;"><image-slot id="g09" shape="rect" placeholder="照片 09" src="photos/dsc06558-msoqoc6f-budg.jpg"></image-slot></div>
+      </div>
+    </div>
+
+    <div data-reveal="1" style="padding: 0 40px clamp(56px, 10vw, 76px); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch;">
+      <div style="position: relative; min-height: 300px; min-width: 0; overflow: hidden;"><image-slot id="dress01" shape="rect" placeholder="穿搭參考照" src="photos/dsc_7282-155-msoqo02u-6jyf.jpg"></image-slot></div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-size: 17px; font-weight: 800; letter-spacing: 0.3em; color: #A79C8E; text-transform: uppercase;">Dress code</div>
+        <div style="font-size: 17px; font-weight: 800; color: #6B5F52; line-height: 1.95; letter-spacing: 0.04em; margin-top: 12px;">當天以大地色系為主，邀請您一起走進這片溫暖的色調。</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding-top: 20px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 34px; height: 34px; flex: none; background: #E4D9C8; border-radius: 2px;"></div>
+            <div style="font-size: 15px; font-weight: 800; color: #6B5F52; letter-spacing: 0.06em;">米杏 Sand</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 34px; height: 34px; flex: none; background: #B49E85; border-radius: 2px;"></div>
+            <div style="font-size: 15px; font-weight: 800; color: #6B5F52; letter-spacing: 0.06em;">淺栗 Clay</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 34px; height: 34px; flex: none; background: #7C7259; border-radius: 2px;"></div>
+            <div style="font-size: 15px; font-weight: 800; color: #6B5F52; letter-spacing: 0.06em;">橄欖 Olive</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-end; gap: 8px; margin-top: 14px;">
+          <img src="assets/floral/rosemary.png" alt="" style="width: 30px; opacity: 0.8; flex: none;"><div style="font-size: 14px; font-weight: 800; color: #B6ABA0; letter-spacing: 0.04em; line-height: 1.7;">不需完全相同，相近色調即可<br>以自身喜好為主就好囉!</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="place" data-reveal="1" style="padding: clamp(56px, 10vw, 76px) 40px; background: #F5F1EA;">
+      <div style="text-align: center; font-size: 20px; font-weight: 800; letter-spacing: 0.36em; color: #A79C8E; text-transform: uppercase; margin-bottom: 26px;">Location</div>
+      <div style="text-align: center; font-size: 22px; font-weight: 800; color: #2B2724; letter-spacing: 0.1em;">CHALET V</div>
+      <div style="text-align: center; font-size: 18px; font-weight: 800; color: #6B5F52; margin-top: 10px; line-height: 1.9;">104臺北市中山區成功里植福路8號<br>入口於典華停車場後方木門處&nbsp; 02-8502-6688</div>
+      <div style="margin-top: 24px; border-radius: 3px; position: relative; overflow: hidden; background: #FBF9F5; border: 1px solid #E6E0D6;">
+        <svg viewBox="0 0 400 300" style="display: block; width: 100%; height: auto;" fill="none" stroke="#6B5F52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="0" width="400" height="300" fill="#FBF9F5" stroke="none"></rect>
+          <path d="M198 104 L262 118 L258 166 L198 166 Z" fill="#E3E8D7" stroke="none"></path>
+
+          <path d="M0 40 C60 52 120 72 190 96 C240 112 320 120 400 116" stroke="#DED7CC" stroke-width="16"></path>
+          <path d="M0 34 C60 46 120 66 190 90 C240 106 320 114 400 110" stroke="#B49E85" stroke-width="2.2" stroke-dasharray="6 5"></path>
+          <path d="M188 96 V300" stroke="#DED7CC" stroke-width="12"></path>
+          <path d="M188 168 H400" stroke="#DED7CC" stroke-width="10"></path>
+          <path d="M0 176 H188" stroke="#DED7CC" stroke-width="7"></path>
+          <path d="M0 288 H400" stroke="#DED7CC" stroke-width="12"></path>
+          <path d="M20 44 V294" stroke="#DED7CC" stroke-width="8"></path>
+          <text x="40" y="98" font-size="10" fill="#A79C8E" stroke="none" writing-mode="vertical-rl" letter-spacing="2">敬業二路</text>
+          <path d="M374 116 V300" stroke="#DED7CC" stroke-width="8"></path>
+
+          <text x="286" y="98" font-size="10" fill="#A79C8E" stroke="none" letter-spacing="1.5" transform="rotate(4 286 98)">北安路</text>
+          <text x="280" y="160" font-size="10" fill="#A79C8E" stroke="none" letter-spacing="1.5">植福路</text>
+          <text x="82" y="271" font-size="10" fill="#A79C8E" stroke="none" letter-spacing="1.5" text-anchor="middle">樂群三路</text>
+          <text x="204" y="222" font-size="10" fill="#A79C8E" stroke="none" writing-mode="vertical-rl" letter-spacing="2">敬業三路</text>
+
+          <image href="assets/map/mrt.png" x="96" y="60" width="34" height="20"></image>
+          <circle cx="113" cy="70" r="20" stroke="#B49E85" stroke-width="1.4" stroke-dasharray="2 3"></circle>
+          <text x="113" y="50" font-size="11" fill="#2B2724" stroke="none" text-anchor="middle" font-weight="bold">捷運劍南路站</text>
+
+          <image href="assets/map/denwell.png" x="30" y="200" width="52" height="26"></image>
+          <text x="56" y="242" font-size="10" fill="#6B5F52" stroke="none" text-anchor="middle">典華婚宴廣場</text>
+          <image href="assets/map/chalet-v.jpg" x="89" y="194" width="52" height="38" preserveAspectRatio="xMidYMid slice"></image>
+          <text x="115" y="248" font-size="13" fill="#2B2724" stroke="none" text-anchor="middle" font-weight="bold" letter-spacing="1">CHALET V</text>
+          <rect x="148" y="198" width="26" height="30" rx="2" fill="#F5F1EA" stroke="#B49E85" stroke-width="1.2"></rect>
+          <path d="M153 205 h5 M164 205 h5 M153 212 h5 M164 212 h5 M153 219 h5 M164 219 h5" stroke="#B49E85" stroke-width="1.2"></path>
+          <text x="161" y="242" font-size="9" fill="#6B5F52" stroke="none" text-anchor="middle">薇閣旅館</text>
+
+          <path d="M115 190 C115 190 104 178 104 171 A11 11 0 0 1 126 171 C126 178 115 190 115 190 Z" fill="#9B7866" stroke="none"></path>
+          <circle cx="115" cy="171" r="3.8" fill="#FBF9F5" stroke="none"></circle>
+          <text x="130" y="168" font-size="10" fill="#9B7866" stroke="none" font-weight="bold">目的地</text>
+
+          <image href="assets/map/miramar.png" x="222" y="192" width="86" height="54"></image>
+          <image href="assets/map/ferris-wheel.png" x="306" y="204" width="50" height="50"></image>
+          <text x="289" y="270" font-size="10" fill="#6B5F52" stroke="none" text-anchor="middle">美麗華百樂園</text>
+
+          <path d="M120 92 C126 118 118 150 115 186" stroke="#9B7866" stroke-width="1.8" stroke-dasharray="1 6"></path>
+          <text x="60" y="140" font-size="10" fill="#9B7866" stroke="none">步行約 3 分</text>
+
+          <path d="M372 30 v24 M366 37 l6 -7 l6 7" stroke="#C9BFAE" stroke-width="1.6"></path>
+          <text x="372" y="20" font-size="11" fill="#C9BFAE" stroke="none" text-anchor="middle">N</text>
+        </svg>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+        <a href="https://www.google.com/maps/place/CHALET+V/@25.0837387,121.5524803,16z/data=!3m1!4b1!4m6!3m5!1s0x3442ad7e7479d027:0x5b6a14ae3fb2e3dc!8m2!3d25.0837339!4d121.5550552!16s%2Fg%2F11s5_vh5rd?entry=ttu&amp;g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="text-align: center; padding: 14px 0; border: 1px solid #CFC6B8; border-radius: 2px; font-size: 18px; font-weight: 800; letter-spacing: 0.12em; color: #91816F;" style-hover="background: #EDE7DD">Google 地圖</a>
+        <button onClick="{{ copyAddr }}" style="padding: 14px 0; border: 1px solid #CFC6B8; border-radius: 2px; background: transparent; font-family: 'ChenYuluoyan', serif; font-weight: 800; font-size: 18px; letter-spacing: 0.12em; color: #91816F; cursor: pointer;" style-hover="background: #EDE7DD">{{ copyLabel }}</button>
+      </div>
+      <div style="margin-top: 26px; font-size: 18px; font-weight: 800; line-height: 2.1; color: #6B5F52; letter-spacing: 0.04em;">捷運　劍南路站 3 號出口 - 步行 3 分鐘<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 順著典華停車場入口的左側小路抵達會場<br>停 車　 典華地下二樓停車場 (免費)</div>
+    </div>
+
+    <div id="rsvp" data-reveal="1" style="padding: clamp(56px, 10vw, 76px) 40px 120px;">
+      <div style="text-align: center; font-size: 20px; font-weight: 800; letter-spacing: 0.36em; color: #A79C8E; text-transform: uppercase; margin-bottom: 10px;">RSVP</div>
+      <div style="text-align: center; font-size: 19px; font-weight: 800; color: #6B5F52; margin-bottom: 26px; letter-spacing: 0.06em;">敬請於 11 月 6 日前回覆</div>
+      <div style="border: 1px solid #E6E0D6; border-radius: 3px; padding: 36px 26px 30px; text-align: center;">
+        <img src="assets/floral/thistle.png" alt="" style="width: 34px; opacity: 0.85; margin-bottom: 14px;">
+        <div style="font-size: 18px; font-weight: 800; color: #6B5F52; line-height: 2; letter-spacing: 0.05em;">為了讓我們準備您的座位與餐點，<br>請點下方連結填寫出席表單。</div>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener" style="display: block; margin-top: 24px; padding: 18px 0; border-radius: 2px; background: #2B2724; color: #FBF9F5; font-size: 18px; font-weight: 800; letter-spacing: 0.22em;" style-hover="background: #453E37">前往填寫表單</a>
+        <div style="margin-top: 14px; font-size: 15px; font-weight: 800; color: #B6ABA0; letter-spacing: 0.06em;">約需 1 分鐘</div>
+      </div>
+      <div style="text-align: center; margin-top: 52px; font-size: 15px; font-weight: 800; letter-spacing: 0.3em; color: #B6ABA0;">Angelo &amp; Iris</div>
+    </div>
+
+
+    <audio ref="{{ audioRef }}" src="music.mp3" loop="{{ true }}" preload="auto"></audio>
+    <button onClick="{{ toggleMusic }}" aria-label="背景音樂" style="position: fixed; top: 18px; right: 18px; z-index: 30; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(251,249,245,0.45); background: rgba(43,39,36,0.42); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0;" style-hover="background: rgba(43,39,36,0.6)">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#FBF9F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V6l10-2v12"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="16" cy="16" r="3"></circle>
+        <path d="M3 3 L21 21" stroke-opacity="{{ muteSlash }}"></path>
+      </svg>
+    </button>
+
+    <div style="position: sticky; bottom: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; background: rgba(251,249,245,0.94); backdrop-filter: blur(10px); border-top: 1px solid #E6E0D6;">
+      <a href="#date" style="text-align: center; padding: 17px 0; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; color: #6B5F52;" style-hover="background: #F2EDE5">日期</a>
+      <a href="#place" style="text-align: center; padding: 17px 0; font-size: 17px; font-weight: 700; letter-spacing: 0.1em; color: #6B5F52; border-left: 1px solid #E6E0D6; border-right: 1px solid #E6E0D6; font-weight: 800;" style-hover="background: #F2EDE5">地點</a>
+      <a href="#rsvp" style="text-align: center; padding: 17px 0; font-size: 17px; font-weight: 800; letter-spacing: 0.1em; color: #6B5F52;" style-hover="background: #F2EDE5">回覆</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9B7866&quot;,&quot;options&quot;:[&quot;#9B7866&quot;,&quot;#B49E85&quot;,&quot;#7C8A76&quot;,&quot;#2B2724&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;樣式&quot;},&quot;googleFormUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://forms.gle/JmnJiMmS5VW6SsJw5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;RSVP 表單&quot;}}">
+class Component extends DCLogic {
+  state = { now: Date.now(), copied: false, playing: false, splash: 'show', progress: 0, done: false, ready: false };
+  audio = React.createRef();
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 30000);
+    // 載入畫面：停留 3 秒 → 淡出 1.1 秒 → 移除，主畫面同時淡入
+    const t0 = performance.now();
+    const tick = () => {
+      const p = Math.min(1, (performance.now() - t0) / 3000);
+      const eased = 1 - Math.pow(1 - p, 2.2);
+      this.setState({ progress: eased, done: p >= 1 });
+      if (p < 1) this.raf = requestAnimationFrame(tick);
+      else this.t1 = setTimeout(() => this.setState({ ready: true }), 800);
+    };
+    this.raf = requestAnimationFrame(tick);
+    // 瀏覽器禁止自動播放：第一次點擊/捲動時啟動
+    this.kick = () => {
+      const a = this.audio.current;
+      if (!a) return;
+      a.volume = 0.35;
+      a.play().then(() => this.setState({ playing: true })).catch(() => {});
+      window.removeEventListener('pointerdown', this.kick);
+      window.removeEventListener('scroll', this.kick);
+    };
+    window.addEventListener('pointerdown', this.kick);
+    window.addEventListener('scroll', this.kick);
+    this.setupReveal();
+  }
+
+  componentDidUpdate() { this.setupReveal(); }
+
+  // 捲動淡入：以 JS 設定初始隱藏狀態，沒有 JS 時內容照常顯示
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this.io) {
+      this.io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (!en.isIntersecting && !(en.boundingClientRect && en.boundingClientRect.bottom < 0)) return;
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          this.io.unobserve(en.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }
+    document.querySelectorAll('[data-reveal]:not([data-reveal-on])').forEach(el => {
+      el.setAttribute('data-reveal-on', '1');
+      if (el.getBoundingClientRect().bottom < 0) return; // 已捲過的區塊直接顯示
+      const dir = el.getAttribute('data-reveal');
+      const from = dir === 'left' ? 'translateX(-46px)' : dir === 'right' ? 'translateX(46px)' : 'translateY(22px)';
+      el.style.opacity = '0';
+      el.style.transform = from;
+      el.style.transition = 'opacity 1.8s cubic-bezier(.22,.61,.36,1), transform 1.8s cubic-bezier(.22,.61,.36,1)';
+      this.io.observe(el);
+    });
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearTimeout(this.t1); clearTimeout(this.t2); cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+    window.removeEventListener('pointerdown', this.kick);
+    window.removeEventListener('scroll', this.kick);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const target = new Date(2027, 2, 6, 10, 0, 0).getTime();
+    const diff = target - s.now;
+    const d = Math.max(0, Math.floor(diff / 86400000));
+    const h = Math.max(0, Math.floor((diff % 86400000) / 3600000));
+    const m = Math.max(0, Math.floor((diff % 3600000) / 60000));
+
+    const accent = this.props.accentColor || '#9B7866';
+    // 2027 年 3 月：1 日為星期一，共 31 天
+    const days = [];
+    for (let i = 0; i < 1; i++) days.push({ label: '', bg: 'transparent', fg: 'transparent' });
+    for (let i = 1; i <= 31; i++) {
+      const on = i === 6;
+      const sunday = i % 7 === 0;
+      days.push({
+        label: String(i),
+        bg: on ? accent : 'transparent',
+        fg: on ? '#FBF9F5' : (sunday ? '#C4796B' : '#57504A')
+      });
+    }
+
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
+      'SUMMARY:尤彥捷 & 廖涓佑 婚禮',
+      'DTSTART:20270306T020000Z', 'DTEND:20270306T050000Z',
+      'LOCATION:CHALET V 104臺北市中山區植福路8號',
+      'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+
+    const address = '104臺北市中山區成功里植福路8號入口於典華停車場後方木門處';
+
+    return {
+      weekLabels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      calDays: days,
+      countdown: [{ k: 'days', v: d }, { k: 'hours', v: h }, { k: 'min', v: m }],
+      icsHref: 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics),
+      copyLabel: s.copied ? '已複製' : '複製地址',
+      copyAddr: () => {
+        if (navigator.clipboard) navigator.clipboard.writeText(address);
+        this.setState({ copied: true });
+        setTimeout(() => this.setState({ copied: false }), 1800);
+      },
+      formUrl: (this.props.googleFormUrl || '').trim() || 'https://forms.gle/JmnJiMmS5VW6SsJw5',
+      splashVisible: s.splash !== 'done',
+      splashPointer: s.splash === 'show' && s.ready ? 'auto' : 'none',
+      barOpacity: s.done ? 0 : 1,
+      notReady: !s.ready,
+      isReady: s.ready,
+      openInvite: () => {
+        if (this.state.splash !== 'show' || !this.state.ready) return;
+        const a = this.audio.current;
+        if (a) { a.volume = 0.35; a.play().then(() => this.setState({ playing: true })).catch(() => {}); }
+        window.removeEventListener('pointerdown', this.kick);
+        window.removeEventListener('scroll', this.kick);
+        this.setState({ splash: 'fade' });
+        this.t2 = setTimeout(() => this.setState({ splash: 'done' }), 1200);
+      },
+      barPct: (Math.round(s.progress * 1000) / 10) + '%',
+      loadingLabel: 'LOADING ' + Math.round(s.progress * 100) + '%',
+      splashOpacity: s.splash === 'show' ? 1 : 0,
+      mainOpacity: s.splash === 'show' ? 0 : 1,
+      audioRef: this.audio,
+      muteSlash: s.playing ? 0 : 0.9,
+      toggleMusic: (e) => {
+        e.stopPropagation();
+        const a = this.audio.current;
+        if (!a) return;
+        window.removeEventListener('pointerdown', this.kick);
+        window.removeEventListener('scroll', this.kick);
+        if (a.paused) { a.volume = 0.35; a.play().then(() => this.setState({ playing: true })).catch(() => {}); }
+        else { a.pause(); this.setState({ playing: false }); }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
